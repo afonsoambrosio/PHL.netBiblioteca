@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "613929019497",
+    "firebase_url": "https://phlnetopac-mobile.firebaseio.com",
+    "project_id": "phlnetopac-mobile",
+    "storage_bucket": "phlnetopac-mobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:613929019497:android:1124b443c2cdef39",
+        "android_client_info": {
+          "package_name": "com.canudinx.phlnetopac"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "613929019497-8el5p7r2t3i7b1ppn6hr31j16tbc0if1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhLw3OzPFzoT5qtjfIuGqWAZw6pmkhcEU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
