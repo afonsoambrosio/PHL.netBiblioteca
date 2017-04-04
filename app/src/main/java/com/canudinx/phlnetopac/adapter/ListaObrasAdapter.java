@@ -40,6 +40,7 @@ public class ListaObrasAdapter extends BaseAdapter{
 
         TextView titulo = (TextView) linha.findViewById(R.id.tv_titulo_obra);
 
+        // Remove as tags HTML que estão misturadas com os itens da busca e acescenta as devidas quebras de linha
         String descricao = lista[i].replaceFirst("</td>", " - ").replaceAll("(<br>|<p>|<b>)", "\n").replaceAll("<[^>]*>", "");
 
         titulo.setText(descricao);

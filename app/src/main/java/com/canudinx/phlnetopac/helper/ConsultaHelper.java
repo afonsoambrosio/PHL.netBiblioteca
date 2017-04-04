@@ -21,6 +21,8 @@ public class ConsultaHelper {
     AdView adview;
     AdRequest adRequest;
 
+    // Realiza a busca ao acervo atravez da AsyncTask
+
     public ConsultaHelper(final Activity activity){
         this.activity = activity;
 
@@ -57,6 +59,7 @@ public class ConsultaHelper {
             btn_buscar.setClickable(false);
             loader.setVisibility(FrameLayout.VISIBLE);
 
+            // Efetua a consulta no link indicado
             ConsultarTask task = new ConsultarTask(activity, "http://unifeiitajuba.phlnet.com.br/cgi-bin/wxis.exe?IsisScript=searchterm.xis&searchterm=", chave);
 
             task.execute();

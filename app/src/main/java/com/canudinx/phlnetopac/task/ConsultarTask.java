@@ -51,10 +51,13 @@ public class ConsultarTask extends AsyncTask<String, Integer, Void>{
         if(cm.getActiveNetworkInfo() != null) {
 
             try {
+
+                // Concatena o endereço com o termo a ser buscado
                 endereco += URLEncoder.encode(chave, "iso-8859-1");
 
                 URL url = new URL(endereco);
 
+                // Abre uma conexão HTTP com o servidor
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
                 conn.setReadTimeout(10000);
@@ -67,11 +70,12 @@ public class ConsultarTask extends AsyncTask<String, Integer, Void>{
 
                     if (istream != null) {
 
+                        // Leitura e processamento dos dados recebidos
                         reader = new BufferedReader(new InputStreamReader(istream, "iso-8859-1"));
 
                         String linha;
                         while ((linha = reader.readLine()) != null) {
-                            if(linha.length() > 400){
+                            if(linha.length() > 400){ // Se tiver menos que 400 caracteres = Nenhuma obra encontrada
                                 resultado = linha;
                             }
                         }
@@ -108,6 +112,7 @@ public class ConsultarTask extends AsyncTask<String, Integer, Void>{
         loader.setVisibility(FrameLayout.GONE);
 
         if(parts != null) {
+            // Lista os 20 primeiros resultados
             ListaObrasAdapter adapter = new ListaObrasAdapter(activity, parts);
 
             lista_obras.setAdapter(adapter);
