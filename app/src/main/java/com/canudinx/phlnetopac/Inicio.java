@@ -1,5 +1,6 @@
 package com.canudinx.phlnetopac;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -36,7 +37,11 @@ public class Inicio extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
+        int selecet = item.getItemId();
+        if(selecet == R.id.sobre){
+            Intent irParaSobre = new Intent(this, Sobre.class);
+            startActivity(irParaSobre);
+        }
         return super.onOptionsItemSelected(item);
     }
 

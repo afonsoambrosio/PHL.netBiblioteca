@@ -19,7 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Consulta" />
-        <activity android:name=".Conta"></activity>
+        <activity android:name=".Conta" />
+        <activity android:name=".Sobre"></activity>
     </application>
 
 </manifest>

@@ -1,10 +1,13 @@
 <resources>
-    <string name="app_name">PHL.netopac Mobile</string>
+    <string name="app_name">PHL.net<i>opac</i> Mobile</string>
     <string name="consulta">CONSULTA AO ACERVO</string>
     <string name="conta">ACESSAR CONTA (breve)</string>
     <string name="alterar_inst">Alterar instituição</string>
     <string name="remover_ad">Remover anúncios</string>
     <string name="sobre">Sobre</string>
     <string name="campo_busca">Titulo, autor, termo...</string>
-    <string name="banner_ad_unit_id">id</string>
+    <string name="banner_ad_unit_id">your_id</string>
+    <string name="info">Aplicativo para interação com o sistema bibliotecário PHL.net.\nUtilize os termos \"and\" e \"or\" para refinar as buscas!</string>
+    <string name="desenvolvimento"><b>Desenvolvimento:</b> Canudinho\n<b>Agradecimentos:</b> Prof. Elysio Mira Soares de Oliveira</string>
+    <string name="versao"><b>Versão 1.2 de 04/04/2017</b></string>
 </resources>
