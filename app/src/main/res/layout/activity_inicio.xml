@@ -17,7 +17,7 @@
         android:textColor="@android:color/white"
         android:textSize="22sp"
         android:textStyle="normal|bold"
-        android:backgroundTint="@android:color/holo_red_light"
+        android:backgroundTint="@color/colorAccent"
         android:layout_marginBottom="-3dp"
         android:id="@+id/btn_consulta" />
 
@@ -39,6 +39,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         ads:adSize="BANNER"
-        ads:adUnitId="@string/banner_ad_unit_id"></com.google.android.gms.ads.AdView>
+        ads:adUnitId="@string/banner_ad_unit_id" />
 
 </LinearLayout>

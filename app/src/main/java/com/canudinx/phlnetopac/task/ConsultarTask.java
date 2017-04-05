@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
@@ -30,7 +31,6 @@ public class ConsultarTask extends AsyncTask<String, Integer, Void>{
     private BufferedReader reader;
     private String endereco = "";
     private String chave = "";
-    private String resultado = "";
     private String[] parts;
     private ListView lista_obras;
 
@@ -40,6 +40,8 @@ public class ConsultarTask extends AsyncTask<String, Integer, Void>{
         this.chave = chave;
 
         lista_obras = (ListView) activity.findViewById(R.id.resultado_busca);
+
+        lista_obras.setAdapter(null);
     }
 
     @Override
@@ -73,16 +75,12 @@ public class ConsultarTask extends AsyncTask<String, Integer, Void>{
                         // Leitura e processamento dos dados recebidos
                         reader = new BufferedReader(new InputStreamReader(istream, "iso-8859-1"));
 
-                        String linha;
-                        while ((linha = reader.readLine()) != null) {
-                            if(linha.length() > 400){ // Se tiver menos que 400 caracteres = Nenhuma obra encontrada
-                                resultado = linha;
-                            }
+                        int ch;
+                        while ((ch = reader.read()) > 0) {
+                            builder.append((char)ch);
                         }
 
-                        if(resultado.length() > 400) {
-                            parts = resultado.split("<hr>");
-                        }
+                        parts = builder.substring(builder.indexOf("Total encontrado")).split("<hr>");
 
                     }
 

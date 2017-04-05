@@ -1,7 +1,6 @@
 package com.canudinx.phlnetopac.adapter;
 
 import android.app.Activity;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,18 +9,18 @@ import android.widget.TextView;
 
 import com.canudinx.phlnetopac.R;
 
-public class ListaObrasAdapter extends BaseAdapter{
+public class ListaBibliotecasAdapter extends BaseAdapter{
     private Activity activity;
     private String[] lista;
 
-    public ListaObrasAdapter(Activity activity, String[] lista){
+    public ListaBibliotecasAdapter(Activity activity, String[] lista){
         this.activity = activity;
         this.lista = lista;
     }
 
     @Override
     public int getCount() {
-        return (lista.length > 21 ? lista.length - 1 : lista.length);
+        return lista.length;
     }
 
     @Override
@@ -37,14 +36,11 @@ public class ListaObrasAdapter extends BaseAdapter{
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         LayoutInflater inflater = activity.getLayoutInflater();
-        View linha = inflater.inflate(R.layout.item_lista_obras, null);
+        View linha = inflater.inflate(R.layout.item_lista_bibbliotecas, null);
 
-        TextView titulo = (TextView) linha.findViewById(R.id.tv_titulo_obra);
+        TextView titulo = (TextView) linha.findViewById(R.id.tv_bibblioteca);
 
-        // Remove as tags HTML que estão misturadas com os itens da busca e acescenta as devidas quebras de linha
-        String descricao = lista[i].replaceFirst("</td>", " - ").replaceAll("(<br>|<p>|<b>)", "\n").replaceAll("<[^>]*>", "");
-
-        titulo.setText(descricao);
+        titulo.setText(lista[i].split("##")[0]);
 
         return linha;
     }

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="bibliotecas_disp">
+        <item>UNIFEI Itajubá##http://unifeiitajuba.phlnet.com.br/cgi-bin/wxis.exe?IsisScript=searchterm.xis&amp;searchterm=</item>
+        <item>UNIFEI Itabira##http://unifeiitabira.phlnet.com.br/cgi-bin/wxis.exe?IsisScript=searchterm.xis&amp;searchterm=</item>
+    </string-array>
+</resources>

@@ -7,24 +7,25 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.TextView;
-
 import com.canudinx.phlnetopac.R;
 import com.canudinx.phlnetopac.task.ConsultarTask;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
 public class ConsultaHelper {
-    Activity activity;
-    FrameLayout loader;
-    EditText txt_busca;
-    ImageButton btn_buscar;
-    AdView adview;
-    AdRequest adRequest;
+    private Activity activity;
+    private FrameLayout loader;
+    private EditText txt_busca;
+    private ImageButton btn_buscar;
+    private AdView adview;
+    private AdRequest adRequest;
+    private String endereco;
 
     // Realiza a busca ao acervo atravez da AsyncTask
 
-    public ConsultaHelper(final Activity activity){
+    public ConsultaHelper(Activity activity, String endereco){
         this.activity = activity;
+        this.endereco = endereco;
 
         loader = (FrameLayout) activity.findViewById(R.id.loader);
         txt_busca = (EditText) activity.findViewById(R.id.txt_busca);
@@ -60,7 +61,7 @@ public class ConsultaHelper {
             loader.setVisibility(FrameLayout.VISIBLE);
 
             // Efetua a consulta no link indicado
-            ConsultarTask task = new ConsultarTask(activity, "http://unifeiitajuba.phlnet.com.br/cgi-bin/wxis.exe?IsisScript=searchterm.xis&searchterm=", chave);
+            ConsultarTask task = new ConsultarTask(activity, endereco, chave);
 
             task.execute();
         }
